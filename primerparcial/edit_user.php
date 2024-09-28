@@ -8,7 +8,7 @@ if ($_SESSION['role'] !== 'admin') {
 require 'config.php';
 
 $id = $_GET['id'];
-// Obtenemos los datos del usuario actual
+// De aquí se obtienen los datos del usuario actual
 $sql = "SELECT username, gmail, role FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
@@ -16,7 +16,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
-// Actualizamos los datos del usuario
+// Actualización de los datos del usuario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $gmail = $_POST['gmail'];

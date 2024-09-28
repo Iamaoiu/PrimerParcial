@@ -36,7 +36,7 @@ if (!isset($_SESSION['username'])) {
 
     <div class="container mt-5">
         <div class="row">
-            <!-- Tarjetas de Resumen -->
+            
             <div class="col-md-4">
                 <div class="card text-white bg-primary mb-3">
                     <div class="card-body">
@@ -63,7 +63,6 @@ if (!isset($_SESSION['username'])) {
             </div>
         </div>
 
-        <!-- Tabla de Datos -->
         <div class="row mt-4">
             <div class="col-md-12">
                 <h4>Usuarios Recientes</h4>
@@ -98,7 +97,6 @@ if (!isset($_SESSION['username'])) {
                                 <button class="btn btn-sm btn-danger">Eliminar</button>
                             </td>
                         </tr>
-                        <!-- Puedes añadir más filas dinámicamente -->
                     </tbody>
                 </table>
             </div>

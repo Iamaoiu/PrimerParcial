@@ -2,12 +2,11 @@
 session_start();
 include('config.php');
 
-// Verificar si el formulario de login fue enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_username = $_POST['username'];
     $input_password = $_POST['password'];
 
-    // Buscar el usuario en la base de datos
+    // Búsqueda del Usuario en la BBDD
     $sql = "SELECT * FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $input_username);
@@ -16,9 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
-        // Verificar la contraseña
+        // Verificación de la Contraseña
         if (password_verify($input_password, $user['password'])) {
-            // Autenticación exitosa
+            // Si la autenticación fue exitosa -->
             $_SESSION['username'] = $user['username'];
             header("Location: dashboard.php");
             exit();

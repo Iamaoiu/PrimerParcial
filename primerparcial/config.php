@@ -1,14 +1,13 @@
 <?php
-// Datos de conexión
 $host = 'localhost';
-$dbname = 'sistema_login'; // Nombre de la base de datos
-$username = 'root'; // Usuario de PhpMyAdmin
-$password = ''; // Contraseña (por defecto en XAMPP no hay)
+$dbname = 'sistema_login'; 
+$username = 'root'; 
+$password = ''; 
 
-// Crear la conexión
+// Línea que establece la conexión con la BBDD
 $conn = new mysqli($host, $username, $password, $dbname);
 
-// Comprobar la conexión
+// Línea de comprobación de la conexión
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
